@@ -1,0 +1,34 @@
+CREATE TABLE Rifle AS
+SELECT AVG(AveragePlatinumPrice) AS PlatAvgAmount
+FROM riven
+WHERE Disposition = '●●●●○'
+AND WeaponType = 'Rifle';
+
+
+
+SELECT * from Rifle;
+
+
+
+
+CREATE TABLE Secondary as
+SELECT SUM(PopularityRank) as Ranking
+from riven
+WHERE AveragePlatinumPrice > 900
+and IncarnonAvailable = 'No'
+and WeaponType = 'Secondary';
+
+
+Select * from Secondary
+
+
+create table Shotgun as
+select count(KuvaVariant) as KuvaShotgun
+from riven
+where WeaponType = 'Shotgun'
+and KuvaVariant = 'Yes'
+and MetaStatus = 'Strong';
+
+
+
+Select * from Shotgun
